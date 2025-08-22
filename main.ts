@@ -30,16 +30,16 @@ function getProducts(list: {products: ProductType[]}){
     list.products.map((item: ProductType) =>{
         let elItem: HTMLLIElement = document.createElement("li");
         elItem.innerHTML = `
-        <div class="w-[350px] bg-purple-200 rounded-md overflow-hidden>
-        <img class="mb-2 src="${item.images[0]}" alt="product img" width="350" height="200"/>
-        <div class="p-2">
-        <h2 class="font-bold mb-[5px] text-[22px]">${item.title}</h2>
-        <p class="font-medium line-clamp-2 mb-[5px]">${item.description}</p>
-        <div class="flex items-center justify-between">
-        <strong>${item.category}</strong>
-        <strong>${item.price}</strong>
-        </div>
-        </div>
+        <div class="w-[350px] bg-purple-200 rounded-md overflow-hidden">
+            <img class="mb-2" src="${item.images[0]}" alt="product img" width="350" height="200"/>
+            <div class="p-2">
+                <h2 class="font-bold mb-[5px] text-[22px]">${item.title}</h2>
+                <p class="font-medium line-clamp-2 mb-[5px]">${item.description}</p>
+            </div>
+            <div class="flex items-center justify-between">
+                <strong>${item.category}</strong>
+                <strong>${item.price}</strong>
+            </div>
         </div>
         `;
         elProductList?.appendChild(elItem);
