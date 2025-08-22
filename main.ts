@@ -30,13 +30,13 @@ function getProducts(list: {products: ProductType[]}){
     list.products.map((item: ProductType) =>{
         let elItem: HTMLLIElement = document.createElement("li");
         elItem.innerHTML = `
-        <div class="w-[350px] bg-purple-200 rounded-md overflow-hidden">
+        <div class="w-[280px] bg-purple-200 rounded-2xl overflow-hidden">
             <img class="mb-2" src="${item.images[0]}" alt="product img" width="350" height="200"/>
             <div class="p-2">
-                <h2 class="font-bold mb-[5px] text-[22px]">${item.title}</h2>
+                <h2 class="font-bold mb-[5px] text-[22px] line-clamp-1">${item.title}</h2>
                 <p class="font-medium line-clamp-2 mb-[5px]">${item.description}</p>
             </div>
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between px-5 pb-5">
                 <strong>${item.category}</strong>
                 <strong>${item.price}</strong>
             </div>
@@ -51,7 +51,7 @@ function getCategoryProduct(list: CategoryType[]){
     list.splice(0, 10).map((item: CategoryType) => {
         let elButton: HTMLButtonElement = document.createElement("button");
         elButton.textContent = item.name;
-        elButton.classList = "p-2 rounded-md cursor-pointer duration-300 hover:scale-[1.1] bg-slate-500 text-white font-semibold";
+        elButton.classList = "p-2 rounded-md cursor-pointer duration-300 hover:scale-[1.1] bg-slate-500 text-white font-semibold mx-auto gap-2";
         elCategoryList?.appendChild(elButton);
 
         elButton.addEventListener("click", () =>{
@@ -62,5 +62,3 @@ function getCategoryProduct(list: CategoryType[]){
         });
     });
 }
-
-
